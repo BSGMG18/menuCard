@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import RecursiveProperty from "./RecursiveProperty";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-intro">
+        <RecursiveProperty
+          property={testJson}
+          propertyName="Speisekarte"
+          rootProperty={true}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
+
+const testJson = [
+  {
+    id: "1",
+    name: "null",
+    email: "hel",
+    kinder: {
+      id: "1.1",
+      name: "hallo",
+      email: "nice",
+      kinder: { id: "1.1.1", name: "men", email: "mento", kinder: {} }
+    }
+  },
+  { id: "2", name: "hell", email: "tothe", Hallo: {} },
+  {
+    id: "3",
+    name: "hell",
+    email: "tothe",
+    kinder: { id: "3.1", name: "hell", email: "tothe", kinder: {} }
+  }
+];
