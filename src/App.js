@@ -1,5 +1,5 @@
 import React from "react";
-import RecursiveProperty from "./RecursiveProperty";
+import RecursiveProperty from "./components/RecursiveProperty";
 
 const App = () => {
   return (
@@ -29,7 +29,7 @@ const testJson = [
       kinder: { id: "1.1.1", name: "men", email: "mento", kinder: {} }
     }
   },
-  { id: "2", name: "hell", email: "tothe", Hallo: {} },
+  { id: "2", name: "hell", email: "tothe", kinder: {} },
   {
     id: "3",
     name: "hell",
