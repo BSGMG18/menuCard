@@ -1,5 +1,5 @@
 import React from "react";
-import RecursiveProperty from "./RecursiveProperty";
+import RecursiveProperty from "./components/RecursiveProperty";
 
 const App = () => {
   return (
