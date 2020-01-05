@@ -35,20 +35,23 @@ const RecursiveProperty = props => {
         ) : (
           // und danach der titel genommen mit props.propertyName ###
           <ExpandableProperty
-            title={props.propertyName}
+            title={
+              props.propertyName === ("preis" || "menge")
+                ? props.propertyName
+                : props.property.name
+            }
             expanded={!!props.rootProperty}
             property={!!props.property.isSelected}
-            /* isSelected={props.property.isSelected} */
           >
             {Object.values(props.property).map(
               // und danach mit map über die Childrens iteriert (props.property) ###
               (property, index) => (
                 <RecursiveProperty
                   key={index}
-                  property={property}
                   propertyName={
                     Object.getOwnPropertyNames(props.property)[index]
                   }
+                  property={property}
                 />
               )
             )}

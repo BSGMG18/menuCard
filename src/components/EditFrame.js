@@ -1,7 +1,7 @@
 import React from "react";
 
-const EditFrame = () => {
-  return <div>Hallo</div>;
+const EditFrame = props => {
+  return <div>{console.log(props.data)}</div>;
 };
 
 export default EditFrame;
