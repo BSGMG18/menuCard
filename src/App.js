@@ -1,5 +1,5 @@
 import React from "react";
-import RecursiveProperty from "./components/RecursiveProperty";
+import MenuList from "./components/MenuList";
 import uuidv4 from "uuid/v4";
 
 const App = () => {
@@ -8,26 +8,58 @@ const App = () => {
       id: uuidv4(),
       name: "Speisekarte",
       beschreibung: "Die besten Griechischen Gerichte in ganz Brandenburg",
-      isSelected: false,
+      style: "Überschrift 1",
       children: [
         {
           id: uuidv4(),
           name: "Vorspeisen",
           beschreibung: "Salate, Suppen und vieles mehr",
-          isSelected: false
-        },
-        {
-          id: uuidv4(),
-          isSelected: false,
-          name: "Vorspeisen",
-          kategorie: true,
-          email: "hel",
+          style: "Überschrift 2",
           children: [
             {
               id: uuidv4(),
               name: "Nudelgerichte",
-              isSelected: false,
-              preis: [1, 23, 4]
+              preis: [1, 23, 4],
+              style: "Gericht"
+            },
+            {
+              id: uuidv4(),
+              name: "Nudelgerichte",
+              preis: [1, 23, 4],
+              style: "Gericht"
+            },
+            {
+              id: uuidv4(),
+              name: "Nudelgerichte",
+              preis: 12.5,
+              style: "Gericht"
+            },
+            {
+              id: uuidv4(),
+              name: "Nudelgerichte",
+              preis: [1, 23, 4],
+              style: "Gericht"
+            }
+          ]
+        },
+        {
+          id: uuidv4(),
+          name: "Vorspeisen",
+          email: "hel",
+          style: "Überschrift 2",
+          children: [
+            {
+              id: uuidv4(),
+              name: "Nudelgerichte",
+              style: "Gericht",
+              preis: 12.3
+            },
+            {
+              id: uuidv4(),
+              name: "Cola",
+              style: "Getränk",
+              preis: 12.3,
+              menge: 0.3
             }
           ]
         }
@@ -35,46 +67,12 @@ const App = () => {
     }
   ];
 
-  //         children: [{
-  //           id: uuidv4(),
-  //           isSelected: false,
-  //           name: "NudelnMitTomatensoße",
-  //           preis: [2, 3, 4]
-  //         },
-  //         children: {
-  //           id: uuidv4(),
-  //           name: "NudelnOhneTomatensoße",
-  //           isSelected: false
-  //         }
-  //       }],
-  //       children: {
-  //         id: uuidv4(),
-  //         isSelected: false,
-  //         name: "Kartoffelgerichte",
-  //         kategorie: false,
-  //         email: "nice",
-  //         children: {
-  //           id: uuidv4(),
-  //           isSelected: false,
-  //           name: "Kartoffeln mit Quark",
-  //           email: "mento"
-  //         },
-  //         children: {
-  //           id: uuidv4(),
-  //           name: "KartoffelnOhneQuark",
-  //           isSelected: false
-  //         }
-  //       }
-  //     }
-  //   }
-  // ;
-
   return (
     <div className="App">
       <div className="App-intro">
-        <RecursiveProperty
-          propertyName={null}
-          property={menu[0]}
+        <MenuList
+          property={menu}
+          propertyName={"Erstellen Sie Ihre Speisekarte :)"}
           rootProperty={true}
         />
       </div>
