@@ -14,7 +14,6 @@ const MenuList = props => {
         {!!props.property ? (
           <MenuItem
             title={props.propertyName}
-            description={props.propertyDescription}
             expanded={!!props.rootProperty}
             parent={props.parent}
           >
@@ -22,9 +21,6 @@ const MenuList = props => {
               <MenuList
                 key={property.id}
                 propertyName={property.name}
-                propertyDescription={
-                  property.beschreibung ? property.beschreibung : "Hallo"
-                }
                 property={property.children}
                 parent={props.propertyName}
               />
