@@ -8,7 +8,7 @@ const App = () => {
       id: uuidv4(),
       name: "Speisekarte",
       beschreibung: "Die besten Griechischen Gerichte in ganz Brandenburg",
-      style: "Überschrift 1",
+      style: "Überschrift 11",
       children: [
         {
           id: uuidv4(),
